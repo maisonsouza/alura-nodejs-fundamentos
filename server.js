@@ -1,7 +1,10 @@
+//Importando o módulo do http do Node com a função require.
 const http = require('http');
 
+//Criação do servidor com o método createServer
 const servidor = http.createServer(function (req, resp) {
     let html = '';
+    //Se a requisição for para a raiz
     if(req.url=="/"){
         html = `
         <html>
@@ -13,7 +16,9 @@ const servidor = http.createServer(function (req, resp) {
             </body> 
         </html>
     `;
-    } else if(req.url=='/livros') {
+    }
+    //Caso seja feita uma requisição para /livros
+    else if(req.url=='/livros') {
         html = `
         <html>
             <head>
@@ -29,4 +34,5 @@ const servidor = http.createServer(function (req, resp) {
 
 });
 
+//Servidor escutando na porta 3000
 servidor.listen(3000);

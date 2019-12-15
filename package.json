@@ -1,0 +1,26 @@
+{
+  "name": "alura-nodejs-fundamentos",
+  "version": "1.0.0",
+  "description": "Projeto Alura com NODE",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maisonsouza/alura-nodejs-fundamentos.git"
+  },
+  "author": "Maison Galvão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maisonsouza/alura-nodejs-fundamentos/issues"
+  },
+  "homepage": "https://github.com/maisonsouza/alura-nodejs-fundamentos#readme",
+  "keywords": [
+    "node"
+  ],
+  "dependencies": {
+    "express": "4.16.3"
+  }
+}
