@@ -18,8 +18,17 @@
 - Criar templates dinâmicos com MarkoJS.
 
 ## Persistência de dados
+- O que é o SQLite.
+- Como utilizar o SQLite numa aplicação Node.
+- O que é o padrão DAO.
+- O que são Promises.
+- Como desenvolver o padrão DAO utilizando uma abordagem voltada para callbacks e voltada para Promises.
 
 ## Manipulando a requisição com Middlewares
+- Como configurar rotas para o método POST do protocolo HTTP com o Express.
+- O que são middlewares e para que servem.
+- O que é o módulo body-parser e como ele ajuda a obter os dados vindos no corpo de uma requisição POST.
+- Como utilizar o módulo body-parser criando um middleware que o utilize.
 
 ## Evoluindo a aplicação
 

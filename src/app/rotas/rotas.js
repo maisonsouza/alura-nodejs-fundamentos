@@ -1,3 +1,6 @@
+const LivroDao = require('../infra/livro-dao');
+const db = require('../../config/database');
+
 module.exports = (app) => {
 //Declarando o html
     let html = '';
@@ -20,22 +23,31 @@ module.exports = (app) => {
     });
 
 //Criando a rota para /livros
-    app.get('/livros', function (req, res) {
-      res.marko(
-          require('../views/livros/lista/lista.marko'),
-          {
-            livros: [
-                { 
-                    id: 1,
-                    titulo: 'Fundamentos do Node'
-                },
-                { 
-                    id: 2,
-                    titulo: 'Node Avançado'
+app.get('/livros', function(req, res) {
+    const livroDao = new LivroDao(db);
+    livroDao.lista()
+            .then(livros => res.marko(
+                require('../views/livros/lista/lista.marko'),
+                {
+                    livros: livros
                 }
-            ]
-          }
-      );
-    });
-};
+            ))
+            .catch(erro => console.log(erro));
+});
+
+//Criando a rota para /livros/form
+app.get('/livros/form', function (req, res) {
+    res.marko(require('../views/livros/form/form.marko'));
+  });
+
+
+app.post('/livros', function(req, res) {
+    console.log(req.body);
+    const livroDao = new LivroDao(db);
+    livroDao.adiciona(req.body)
+            .then(res.redirect('/livros'))   
+            .catch(erro => console.log(erro));
+});
+
+}
 
